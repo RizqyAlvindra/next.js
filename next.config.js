@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
+  exportPathMap: function() {
+    return {
+      "/": { page:"/" }
+    };
+  }
 }
